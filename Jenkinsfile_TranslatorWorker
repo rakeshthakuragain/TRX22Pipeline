@@ -1,4 +1,6 @@
 def gv
+def emailHandle
+
 pipeline {
     agent any
 	parameters {
@@ -41,6 +43,8 @@ pipeline {
     }
 
     post {
+		emailHandle = load "email.groovy"
+		
         success {
             echo 'All tasks completed successfully.'
         }
@@ -50,5 +54,6 @@ pipeline {
 		always {
 			echo 'May be email triggering can go here.'
 		}
+		emailHandle.sendSuccessEmail()
     }
 }
