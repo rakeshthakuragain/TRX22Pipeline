@@ -53,7 +53,9 @@ pipeline {
 		}
 		always {
 			echo 'May be email triggering can go here.'
-			emailHandle.sendSuccessEmail()
+			script{
+				emailHandle.sendSuccessEmail()
+			}
 		}
 		
     }
