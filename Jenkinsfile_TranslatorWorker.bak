@@ -29,17 +29,13 @@ pipeline {
         stage('Build') {
             agent { label 'di2inpun0050lv0' }
             steps {
-				script{
-					// gv.buildUnit() 
-				}					
+				
             }
         }
 		stage('Test') {
             agent { label 'di2inpun0050lv0' }
             steps {
-				script{
-					// gv.TestUnit() 
-				}					
+						
             }
         }
     }
