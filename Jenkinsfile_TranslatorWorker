@@ -20,19 +20,19 @@ pipeline {
 		stage('CreateUnit') {
             agent { label 'di2inpun0050lv0' }
             steps {
-									
+				echo 'All tasks completed successfully.'			
             }
         }
         stage('Build') {
             agent { label 'di2inpun0050lv0' }
             steps {
-									
+				echo 'All tasks completed successfully.'					
             }
         }
 		stage('Test') {
             agent { label 'di2inpun0050lv0' }
             steps {
-									
+				echo 'All tasks completed successfully.'					
             }
         }
     }
