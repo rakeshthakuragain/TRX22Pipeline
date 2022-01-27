@@ -27,15 +27,11 @@ pipeline {
         }
         stage('Build') {
             agent { label 'di2inpun0050lv0' }
-            steps {
-						
-            }
+            
         }
 		stage('Test') {
             agent { label 'di2inpun0050lv0' }
-            steps {
-				
-				}					
+            			
             }
         }
     }
