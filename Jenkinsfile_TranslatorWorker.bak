@@ -21,21 +21,27 @@ pipeline {
             agent { label 'di2inpun0050lv0' }
             steps {
 				script{
+					echo 'All tasks completed successfully.'
 					// gv.createUnit() 
-					emailHandle.sendSuccessEmail()
 				}					
             }
         }
         stage('Build') {
             agent { label 'di2inpun0050lv0' }
             steps {
-				echo 'Build tasks completed successfully.'
+				script{
+					echo 'All tasks completed successfully.'
+					// gv.buildUnit() 
+				}					
             }
         }
 		stage('Test') {
             agent { label 'di2inpun0050lv0' }
             steps {
-				echo 'Test tasks completed successfully.'	
+				script{
+					echo 'All tasks completed successfully.'
+					// gv.TestUnit() 
+				}					
             }
         }
     }
@@ -49,6 +55,11 @@ pipeline {
 			echo 'One or more stages have failed.'
 		}
 		always {
+			steps {
+				script{
+					emailHandle.sendSuccessEmail()
+				}					
+            }
 			echo 'May be email triggering can go here.'
 		}
 		
