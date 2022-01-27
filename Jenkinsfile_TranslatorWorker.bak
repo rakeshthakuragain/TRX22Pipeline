@@ -55,11 +55,9 @@ pipeline {
 			echo 'One or more stages have failed.'
 		}
 		always {
-			steps {
 				script{
 					emailHandle.sendSuccessEmail()
 				}					
-            }
 			echo 'May be email triggering can go here.'
 		}
 		
