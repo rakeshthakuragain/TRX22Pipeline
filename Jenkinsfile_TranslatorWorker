@@ -12,6 +12,7 @@ pipeline {
 			steps {
 				script{
 					gv = load "TranslatorWorkerScripts.groovy"
+					emailHandle = load "email.groovy"
 				}
 			}
 		}
@@ -43,7 +44,6 @@ pipeline {
     }
 
     post {
-		emailHandle = load "email.groovy"
 		
         success {
             echo 'All tasks completed successfully.'

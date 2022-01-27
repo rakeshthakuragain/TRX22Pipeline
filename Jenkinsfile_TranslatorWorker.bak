@@ -20,7 +20,7 @@ pipeline {
             agent { label 'di2inpun0050lv0' }
             steps {
 				script{
-					gv.createUnit() 
+					// gv.createUnit() 
 				}					
             }
         }
@@ -28,7 +28,7 @@ pipeline {
             agent { label 'di2inpun0050lv0' }
             steps {
 				script{
-					gv.buildUnit() 
+					// gv.buildUnit() 
 				}					
             }
         }
@@ -36,14 +36,13 @@ pipeline {
             agent { label 'di2inpun0050lv0' }
             steps {
 				script{
-					gv.TestUnit() 
+					// gv.TestUnit() 
 				}					
             }
         }
     }
 
     post {
-		emailHandle = load "email.groovy"
 		
         success {
             echo 'All tasks completed successfully.'
