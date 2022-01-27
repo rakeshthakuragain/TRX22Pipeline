@@ -22,6 +22,7 @@ pipeline {
             steps {
 				script{
 					// gv.createUnit() 
+					emailHandle.sendSuccessEmail()
 				}					
             }
         }
@@ -53,11 +54,6 @@ pipeline {
 		}
 		always {
 			echo 'May be email triggering can go here.'
-			steps {
-				script{
-					emailHandle.sendSuccessEmail()
-				}
-			}
 		}
 		
     }
