@@ -12,6 +12,7 @@ pipeline {
 			steps {
 				script{
 					gv = load "TranslatorWorkerScripts.groovy"
+					emailHandle = load "email.groovy"
 				}
 			}
 		}
