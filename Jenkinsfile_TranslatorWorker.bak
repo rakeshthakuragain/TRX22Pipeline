@@ -29,13 +29,13 @@ pipeline {
         stage('Build') {
             agent { label 'di2inpun0050lv0' }
             steps {
-				
+				echo 'Build tasks completed successfully.'
             }
         }
 		stage('Test') {
             agent { label 'di2inpun0050lv0' }
             steps {
-						
+				echo 'Test tasks completed successfully.'	
             }
         }
     }
