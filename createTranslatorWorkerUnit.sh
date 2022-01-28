@@ -2,9 +2,9 @@
 
 if [ $# -ne 2 ] 
 then
-	echo "createUnit.sh called with incorrect number of arguments."
-	echo "createUnit.sh <NXVersion> <UnitPath>"
-	echo "For example; createUnit.sh nx2206.latest /plm/pnnas/ppic/users/<unit_name>"
+	echo "createTranslatorWorkerUnit.sh called with incorrect number of arguments."
+	echo "createTranslatorWorkerUnit.sh <NXVersion> <UnitPath>"
+	echo "For example; createTranslatorWorkerUnit.sh nx2206.latest /plm/pnnas/ppic/users/<unit_name>"
 	exit 1
 fi
 

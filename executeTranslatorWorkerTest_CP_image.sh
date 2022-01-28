@@ -2,9 +2,9 @@
 
 if [ $# -lt 1 ] 
 then
-	echo "executeTranslatorWorkerTest.sh called with incorrect number of arguments."
-	echo "executeTranslatorWorkerTest.sh <UnitPath>"
-	echo "For example; executeTranslatorWorkerTest.sh /plm/pnnas/ppic/users/<unit_name>"
+	echo "executeTranslatorWorkerTest_CP_image.sh called with incorrect number of arguments."
+	echo "executeTranslatorWorkerTest_CP_image.sh <UnitPath>"
+	echo "For example; executeTranslatorWorkerTest_CP_image.sh /plm/pnnas/ppic/users/<unit_name>"
 	exit 1
 fi
 
