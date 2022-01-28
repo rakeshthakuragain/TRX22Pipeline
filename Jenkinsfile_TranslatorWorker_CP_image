@@ -22,7 +22,7 @@ pipeline {
             agent { label 'di2inpun0050lv0' }
 			when {
                 expression { 
-                   return params.CPNumber != '0'
+                   return params.CPNumber == '0'
                 }
             }
             steps {
