@@ -20,11 +20,7 @@ pipeline {
 		
 		stage('CreateUnit') {
             agent { label 'di2inpun0050lv0' }
-			when {
-                expression { 
-                   return 
-                }
-            }
+			
             steps {
 				script{
 					if (params.CPNumber != "0"){
