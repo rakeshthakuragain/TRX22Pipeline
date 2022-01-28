@@ -4,7 +4,7 @@ def createUnitCPImage()
 	script{		
 		def unitFullPath="${params.UnitPath}/${params.NXRelease}_TranslatorWorker_${BUILD_TIMESTAMP}"
 		sh "chmod +x ./createTranslatorWorkerUnit_CP_image.sh "
-		sh "./createTranslatorWorkerUnit_CP_image.sh ${params.NXRelease} ${unitFullPath}"		
+		sh "./createTranslatorWorkerUnit_CP_image.sh ${params.NXRelease} ${unitFullPath} ${params.CPNumber}"		
 	}
 }
 
@@ -14,7 +14,7 @@ def buildUnitCPImage()
 	script{		
 		def unitFullPath="${params.UnitPath}/${params.NXRelease}_TranslatorWorker_${BUILD_TIMESTAMP}"
 		sh "chmod +x ./buildTranslatorWorkerUnit_CP_image.sh "
-		sh "./buildTranslatorWorkerUnit_CP_image.sh ${unitFullPath}"		
+		sh "./buildTranslatorWorkerUnit_CP_image.sh ${unitFullPath} ${params.CPNumber}"		
 	}
 }
 
