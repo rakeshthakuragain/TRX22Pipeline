@@ -28,8 +28,7 @@ pipeline {
 					}
 					else
 					{
-						echo 'CP number is not specified correctly.'
-						currentBuild.currentResult = 'FAILURE'
+						echo 'CP number is not specified correctly.'						
 					}
 				}					
             }
@@ -39,14 +38,7 @@ pipeline {
 			
             steps {
 				script{
-					if (params.CPNumber != "0"){
-						gv.buildUnitCPImage()
-					}
-					else
-					{
-						echo 'CP number is not specified correctly.'
-						currentBuild.currentResult = 'FAILURE'
-					}
+					gv.buildUnitCPImage() 
 				}					
             }
         }
@@ -55,15 +47,7 @@ pipeline {
 			
             steps {
 				script{
-					if (params.CPNumber != "0"){
-						gv.TestUnitCPImage()
-					}
-					else
-					{
-						echo 'CP number is not specified correctly.'
-						currentBuild.currentResult = 'FAILURE'
-					}
-					
+					gv.TestUnitCPImage() 
 				}					
             }
         }
