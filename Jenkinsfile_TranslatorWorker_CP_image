@@ -20,6 +20,11 @@ pipeline {
 		
 		stage('CreateUnit') {
             agent { label 'di2inpun0050lv0' }
+			when {
+                expression { 
+                   return params.CPNumber != '0'
+                }
+            }
             steps {
 				script{
 					gv.createUnitCPImage() 
@@ -28,6 +33,11 @@ pipeline {
         }
         stage('Build') {
             agent { label 'di2inpun0050lv0' }
+			when {
+                expression { 
+                   return params.CPNumber != '0'
+                }
+            }
             steps {
 				script{
 					gv.buildUnitCPImage() 
@@ -36,6 +46,11 @@ pipeline {
         }
 		stage('Test') {
             agent { label 'di2inpun0050lv0' }
+			when {
+                expression { 
+                   return params.CPNumber != '0'
+                }
+            }
             steps {
 				script{
 					gv.TestUnitCPImage() 
