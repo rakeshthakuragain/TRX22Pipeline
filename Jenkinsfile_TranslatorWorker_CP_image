@@ -29,33 +29,41 @@ pipeline {
 					else
 					{
 						echo 'CP number is not specified correctly.'
+						currentBuild.currentResult = 'FAILURE'
 					}
 				}					
             }
         }
         stage('Build') {
             agent { label 'di2inpun0050lv0' }
-			when {
-                expression { 
-                   return params.CPNumber != "0"
-                }
-            }
+			
             steps {
 				script{
-					gv.buildUnitCPImage() 
+					if (params.CPNumber != "0"){
+						gv.buildUnitCPImage()
+					}
+					else
+					{
+						echo 'CP number is not specified correctly.'
+						currentBuild.currentResult = 'FAILURE'
+					}
 				}					
             }
         }
 		stage('Test') {
             agent { label 'di2inpun0050lv0' }
-			when {
-                expression { 
-                   return params.CPNumber != "0"
-                }
-            }
+			
             steps {
 				script{
-					gv.TestUnitCPImage() 
+					if (params.CPNumber != "0"){
+						gv.TestUnitCPImage()
+					}
+					else
+					{
+						echo 'CP number is not specified correctly.'
+						currentBuild.currentResult = 'FAILURE'
+					}
+					
 				}					
             }
         }
