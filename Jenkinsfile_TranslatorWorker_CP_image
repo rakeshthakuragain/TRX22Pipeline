@@ -22,12 +22,18 @@ pipeline {
             agent { label 'di2inpun0050lv0' }
 			when {
                 expression { 
-                   return params.CPNumber != "0"
+                   return 
                 }
             }
             steps {
 				script{
-					gv.createUnitCPImage() 
+					if (params.CPNumber != "0"){
+						gv.createUnitCPImage()
+					}
+					else
+					{
+						echo 'CP number is not specified correctly.'
+					}
 				}					
             }
         }
@@ -35,7 +41,7 @@ pipeline {
             agent { label 'di2inpun0050lv0' }
 			when {
                 expression { 
-                   return params.CPNumber != '0'
+                   return params.CPNumber != "0"
                 }
             }
             steps {
@@ -48,7 +54,7 @@ pipeline {
             agent { label 'di2inpun0050lv0' }
 			when {
                 expression { 
-                   return params.CPNumber != '0'
+                   return params.CPNumber != "0"
                 }
             }
             steps {
