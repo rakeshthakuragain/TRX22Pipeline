@@ -16,6 +16,13 @@ SOURCE_PATH=${UNIT_PATH}/lnx64/Products/TranslatorWorker
 RUN_FILE=${SOURCE_PATH}/pvtrans/run_ugtopv
 CONFIG_FILE=${SOURCE_PATH}/pvtrans/tessUG.config
 
+if [ ! -d ${DEPLOY_DIR} ]
+then
+	echo "Creating deployment directory ${DEPLOY_DIR}"
+	mkdir -p ${DEPLOY_DIR}
+	chmod -r 0755 ${DEPLOY_DIR}
+fi
+
 # Copy all 
 cp -r ${SOURCE_PATH}/   ${DEPLOY_DIR}/
 
