@@ -28,7 +28,7 @@ def TestUnitCPImage()
 	}
 }
 
-def Deploy()
+def DeployCPImage()
 {
 	echo "Executing deploy..."
 	script{		

@@ -56,7 +56,7 @@ pipeline {
             agent { label 'TRX22-build-machine-zkx3un' }
             steps {
 				script{
-					gv.Deploy() 
+					gv.DeployCPImage() 
 				}					
             }
         }
